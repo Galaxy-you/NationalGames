@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直播大厅 - 第十五届全国运动会</title>
+    <style>
+        @font-face {
+            font-family: XHW-pzh;
+            src: url(/global/public/text/XHW-pzh.woff2) format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', XHW-pzh, 'Microsoft YaHei', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a:hover {
+            color: #2c62f7 !important;
+        }
+
+        .part {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ej-banner {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .banner-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .ej-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 58px;
+            background: #2c62f7;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .ej-nav .part .nav-main {
+            text-align: center;
+        }
+
+        .ej-nav .part a {
+            display: inline-block;
+            line-height: 58px;
+            padding: 0 20px;
+            margin: 0 5px;
+            font-size: 18px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .ej-nav .part a.active,
+        .ej-nav .part a:hover {
+            background: rgba(255,255,255,0.2);
+            font-weight: 700;
+        }
+
+        .ej-list {
+            margin: 50px auto 30px;
+        }
+
+        .title {
+            position: relative;
+            font-size: 30px;
+            line-height: 1.5;
+            font-weight: 700;
+            color: #2c62f7;
+            border-bottom: 2px solid #2c62f7;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .title:before {
+            content: "";
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 8px;
+            margin-right: 10px;
+            width: 6px;
+            height: 30px;
+            background: #2c62f7;
+        }
+
+        .live-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .live-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .live-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .live-card .live-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            position: relative;
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #ff4757;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .live-card .live-content {
+            padding: 20px;
+        }
+
+        .live-card .live-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .live-card .live-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .live-card .live-time {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .lib-foot {
+            margin-top: 50px !important;
+            background: #2c62f7 !important;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .part {
+                width: 100%;
+                padding: 0 3%;
+            }
+
+            .live-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .live-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 横幅 -->
+    <div class="ej-banner">
+        <div class="banner-content">
+            <h1>📺 直播大厅</h1>
+            <p>精彩赛事 · 实时观看</p>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="ej-nav">
+        <div class="part">
+            <div class="nav-main">
+                <a href="index.html">首页</a>
+                <a href="schedule.html">赛程安排</a>
+                <a href="news.html">赛场速讯</a>
+                <a href="live.html" class="active">直播大厅</a>
+                <a href="interview.html">人物访谈</a>
+                <a href="encyclopedia.html">全运百科</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="ej-list">
+        <div class="part">
+            <div class="title">正在直播</div>
+            
+            <div class="live-grid">
+                <div class="live-card">
+                    <div class="live-image">
+                        <div class="live-badge">🔴 直播中</div>
+                        <span style="color: white;">🏊</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">游泳 - 男子200米自由泳决赛</div>
+                        <div class="live-info">📍 广州奥体中心游泳馆</div>
+                        <div class="live-time">⏰ 19:30 - 21:00</div>
+                    </div>
+                </div>
+
+                <div class="live-card">
+                    <div class="live-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <div class="live-badge">🔴 直播中</div>
+                        <span style="color: white;">🏀</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">篮球 - 女子成年组决赛</div>
+                        <div class="live-info">📍 深圳宝安体育馆</div>
+                        <div class="live-time">⏰ 20:00 - 22:00</div>
+                    </div>
+                </div>
+
+                <div class="live-card">
+                    <div class="live-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="live-badge">🔴 直播中</div>
+                        <span style="color: white;">🏐</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">排球 - 男子成年组半决赛</div>
+                        <div class="live-info">📍 广州体育馆</div>
+                        <div class="live-time">⏰ 19:00 - 21:30</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="title">即将直播</div>
+            
+            <div class="live-grid">
+                <div class="live-card">
+                    <div class="live-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <span style="color: white;">🏓</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">乒乓球 - 女子单打决赛</div>
+                        <div class="live-info">📍 广东省体育馆</div>
+                        <div class="live-time">⏰ 明天 14:00 - 16:00</div>
+                    </div>
+                </div>
+
+                <div class="live-card">
+                    <div class="live-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <span style="color: white;">🏸</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">羽毛球 - 混合双打决赛</div>
+                        <div class="live-info">📍 佛山岭南明珠体育馆</div>
+                        <div class="live-time">⏰ 明天 15:30 - 17:30</div>
+                    </div>
+                </div>
+
+                <div class="live-card">
+                    <div class="live-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        <span style="color: white;">🤸</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">体操 - 女子个人全能决赛</div>
+                        <div class="live-info">📍 中山体育馆</div>
+                        <div class="live-time">⏰ 明天 16:00 - 18:30</div>
+                    </div>
+                </div>
+
+                <div class="live-card">
+                    <div class="live-image" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                        <span style="color: white;">🏋️</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">举重 - 男子89公斤级决赛</div>
+                        <div class="live-info">📍 东莞体育中心</div>
+                        <div class="live-time">⏰ 明天 19:00 - 21:00</div>
+                    </div>
+                </div>
+
+                <div class="live-card">
+                    <div class="live-image" style="background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);">
+                        <span style="color: white;">🏃</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">田径 - 男子100米决赛</div>
+                        <div class="live-info">📍 广州奥体中心体育场</div>
+                        <div class="live-time">⏰ 11月16日 20:30 - 22:00</div>
+                    </div>
+                </div>
+
+                <div class="live-card">
+                    <div class="live-image" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+                        <span style="color: white;">🚴</span>
+                    </div>
+                    <div class="live-content">
+                        <div class="live-title">场地自行车 - 团体竞速赛</div>
+                        <div class="live-info">📍 香港单车馆</div>
+                        <div class="live-time">⏰ 11月16日 15:00 - 17:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="lib-foot">
+        <div class="part">
+            <p>第十五届全国运动会 · 广东·香港·澳门</p>
+            <p>2025年11月9日-21日</p>
+        </div>
+    </div>
+</body>
+</html>

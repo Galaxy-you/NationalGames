@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赛场速讯 - 第十五届全国运动会</title>
+    <style>
+        @font-face {
+            font-family: XHW-pzh;
+            src: url(/global/public/text/XHW-pzh.woff2) format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', XHW-pzh, 'Microsoft YaHei', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a:hover {
+            color: #2c62f7 !important;
+        }
+
+        .part {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ej-banner {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .banner-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .ej-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 58px;
+            background: #2c62f7;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .ej-nav .part .nav-main {
+            text-align: center;
+        }
+
+        .ej-nav .part a {
+            display: inline-block;
+            line-height: 58px;
+            padding: 0 20px;
+            margin: 0 5px;
+            font-size: 18px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .ej-nav .part a.active,
+        .ej-nav .part a:hover {
+            background: rgba(255,255,255,0.2);
+            font-weight: 700;
+        }
+
+        .ej-list {
+            margin: 50px auto 30px;
+        }
+
+        .title {
+            position: relative;
+            font-size: 30px;
+            line-height: 1.5;
+            font-weight: 700;
+            color: #2c62f7;
+            border-bottom: 2px solid #2c62f7;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .title:before {
+            content: "";
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 8px;
+            margin-right: 10px;
+            width: 6px;
+            height: 30px;
+            background: #2c62f7;
+        }
+
+        .list-txt {
+            margin-top: 30px;
+        }
+
+        .list-txt li {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 18px 0 18px 10px;
+            line-height: 26px;
+            border-bottom: 1px dotted #ccc;
+            background: white;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .list-txt li:hover {
+            background: #f9f9f9;
+            transform: translateX(5px);
+        }
+
+        .list-txt li .tit {
+            font-size: 18px;
+            color: #333;
+            flex: 1;
+        }
+
+        .list-txt li .tit a {
+            color: #333;
+        }
+
+        .list-txt li .time {
+            margin-left: 10px;
+            font-size: 14px;
+            color: #999;
+            white-space: nowrap;
+        }
+
+        .list-txt li:before {
+            content: "";
+            margin-right: 15px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2c62f7;
+            flex-shrink: 0;
+        }
+
+        .xpage-more-btn {
+            width: 140px;
+            text-align: center;
+            margin: 30px auto;
+            background: #2c62f7;
+            line-height: 45px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .xpage-more-btn:hover {
+            background: #1e4fd7;
+            transform: scale(1.05);
+        }
+
+        .lib-foot {
+            margin-top: 50px !important;
+            background: #2c62f7 !important;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .part {
+                width: 100%;
+                padding: 0 3%;
+            }
+
+            .list-txt li .time {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 横幅 -->
+    <div class="ej-banner">
+        <div class="banner-content">
+            <h1>⚡ 赛场速讯</h1>
+            <p>实时更新 · 第一时间掌握赛场动态</p>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="ej-nav">
+        <div class="part">
+            <div class="nav-main">
+                <a href="index.html">首页</a>
+                <a href="schedule.html">赛程安排</a>
+                <a href="news.html" class="active">赛场速讯</a>
+                <a href="live.html">直播大厅</a>
+                <a href="interview.html">人物访谈</a>
+                <a href="encyclopedia.html">全运百科</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="ej-list">
+        <div class="part">
+            <div class="title">最新动态</div>
+            
+            <ul class="list-txt xpage-content">
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏊 潘展乐100米自由泳夺冠</a>
+                    </div>
+                    <div class="time">2025-11-15 02:23:30</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏓 乒乓球："诗与远方"混双摘金 马龙领衔江苏夺冠</a>
+                    </div>
+                    <div class="time">2025-11-15 02:23:11</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏸 羽毛球团体赛：石宇奇率江苏夺冠，男团五连冠</a>
+                    </div>
+                    <div class="time">2025-11-15 02:23:58</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏐 女排"强强对话"江苏完胜河南</a>
+                    </div>
+                    <div class="time">2025-11-15 07:22:09</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏑 但文独进三球 四川女曲完胜夺冠</a>
+                    </div>
+                    <div class="time">2025-11-15 07:21:59</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏉 12年后重返全运 香港橄榄球男队全胜夺冠</a>
+                    </div>
+                    <div class="time">2025-11-15 07:09:18</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏋️ 举重：汪周雨加冕三冠 李雯雯错失金牌</a>
+                    </div>
+                    <div class="time">2025-11-15 02:14:47</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🤸 副校长肖若腾卫冕</a>
+                    </div>
+                    <div class="time">2025-11-15 02:14:22</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🧗 攀岩综合：赵一程、邓丽娟夺金 全国纪录被刷新</a>
+                    </div>
+                    <div class="time">2025-11-15 02:13:47</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🚴 场地自行车：金牌目前全部姓"豫"</a>
+                    </div>
+                    <div class="time">2025-11-15 02:13:29</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏊 北体大队斩获花游团体金牌</a>
+                    </div>
+                    <div class="time">2025-11-15 02:11:41</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏊 第18金！"五朝元老"汪顺达成四连冠</a>
+                    </div>
+                    <div class="time">2025-11-15 02:09:39</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏃 15日看点：马拉松，往返深圳与香港</a>
+                    </div>
+                    <div class="time">2025-11-15 01:35:12</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏊 "飞鱼"再出发 百米终夺金</a>
+                    </div>
+                    <div class="time">2025-11-14 23:50:54</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏊 潘展乐"全满贯" 汪顺四连冠</a>
+                    </div>
+                    <div class="time">2025-11-14 23:50:39</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏀 广东队和四川队会师女篮成年组决赛</a>
+                    </div>
+                    <div class="time">2025-11-14 23:44:58</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏹 刷新"起点" 澳门箭手的全运初体验</a>
+                    </div>
+                    <div class="time">2025-11-14 23:44:41</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🎯 飞碟项目首个决赛日 江苏队独揽两金</a>
+                    </div>
+                    <div class="time">2025-11-14 22:16:27</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">📰 13日综合：新星闪耀 老将圆满</a>
+                    </div>
+                    <div class="time">2025-11-14 01:10:31</div>
+                </li>
+                <li>
+                    <div class="tit">
+                        <a href="#" target="_blank">🏋️ 举重：廖桂芳夺冠超纪录</a>
+                    </div>
+                    <div class="time">2025-11-14 01:07:49</div>
+                </li>
+            </ul>
+            
+            <div class="xpage-more-btn">查看更多</div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="lib-foot">
+        <div class="part">
+            <p>第十五届全国运动会 · 广东·香港·澳门</p>
+            <p>2025年11月9日-21日</p>
+        </div>
+    </div>
+</body>
+</html>

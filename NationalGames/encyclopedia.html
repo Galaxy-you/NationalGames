@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全运百科 - 第十五届全国运动会</title>
+    <style>
+        @font-face {
+            font-family: XHW-pzh;
+            src: url(/global/public/text/XHW-pzh.woff2) format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', XHW-pzh, 'Microsoft YaHei', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a:hover {
+            color: #2c62f7 !important;
+        }
+
+        .part {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ej-banner {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .banner-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .ej-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 58px;
+            background: #2c62f7;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .ej-nav .part .nav-main {
+            text-align: center;
+        }
+
+        .ej-nav .part a {
+            display: inline-block;
+            line-height: 58px;
+            padding: 0 20px;
+            margin: 0 5px;
+            font-size: 18px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .ej-nav .part a.active,
+        .ej-nav .part a:hover {
+            background: rgba(255,255,255,0.2);
+            font-weight: 700;
+        }
+
+        .ej-list {
+            margin: 50px auto 30px;
+        }
+
+        .title {
+            position: relative;
+            font-size: 30px;
+            line-height: 1.5;
+            font-weight: 700;
+            color: #2c62f7;
+            border-bottom: 2px solid #2c62f7;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            margin-top: 50px;
+        }
+
+        .title:before {
+            content: "";
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 8px;
+            margin-right: 10px;
+            width: 6px;
+            height: 30px;
+            background: #2c62f7;
+        }
+
+        .title:first-child {
+            margin-top: 0;
+        }
+
+        .content-box {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .content-box h3 {
+            font-size: 22px;
+            color: #2c62f7;
+            margin-bottom: 15px;
+        }
+
+        .content-box p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .content-box img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .content-box strong {
+            color: #2c62f7;
+        }
+
+        .mascot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .mascot-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .mascot-card h4 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .mascot-card p {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .highlight-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-item {
+            background: #f9f9f9;
+            border-left: 4px solid #2c62f7;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .highlight-item h4 {
+            font-size: 18px;
+            color: #2c62f7;
+            margin-bottom: 10px;
+        }
+
+        .highlight-item p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        .lib-foot {
+            margin-top: 50px !important;
+            background: #2c62f7 !important;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .part {
+                width: 100%;
+                padding: 0 3%;
+            }
+
+            .mascot-grid,
+            .highlight-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 横幅 -->
+    <div class="ej-banner">
+        <div class="banner-content">
+            <h1>📖 全运百科</h1>
+            <p>了解全运会 · 感受体育魅力</p>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="ej-nav">
+        <div class="part">
+            <div class="nav-main">
+                <a href="index.html">首页</a>
+                <a href="schedule.html">赛程安排</a>
+                <a href="news.html">赛场速讯</a>
+                <a href="live.html">直播大厅</a>
+                <a href="interview.html">人物访谈</a>
+                <a href="encyclopedia.html" class="active">全运百科</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="ej-list">
+        <div class="part">
+            <!-- 吉祥物部分 -->
+            <div class="title" id="mascot">吉祥物："喜洋洋"和"乐融融"</div>
+            
+            <div class="content-box">
+                <img src="https://mmbiz.qpic.cn/mmbiz_jpg/azXQmS1HA7nQ9bbsBDtARkobWfb16adR3ibhTM8PuqrJGiapUoicWLwCDSGomt3n6FrRBypXhkTokhymv3xKJ0vCg/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp" alt="吉祥物">
+                
+                <h3>🎉 彻底火了！你认识它俩不？</h3>
+                <p>五万多人背着呆萌的双肩包鱼贯而出……这不是什么大型的放学现场，而是十五运会开幕式后的散场。</p>
+                
+                <p>走近一看，每个人的背包上，都有可爱的"大萌物"——圆圆的大眼睛，弯弯的嘴角，一脸期待地望着你……很多网友表示："被萌翻啦！"</p>
+
+                <img src="https://mmbiz.qpic.cn/mmbiz_gif/azXQmS1HA7nQ9bbsBDtARkobWfb16adRib81xsJl3DXBHx0N7ZWxibjt1waWDgK2t0hL7PHoO5IIXQMIKurYPBAg/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="吉祥物动图">
+
+                <h3>📦 广州喜乐包（"显眼包"）</h3>
+                <p>这款背包名叫<strong>"广州喜乐包"</strong>，也被网友称为<strong>"显眼包"</strong>。包的正面是"喜洋洋"和"乐融融"两只十五运会和残特奥会的吉祥物憨态可掬的大头照。</p>
+
+                <p>"广州喜乐包"主设计师曾振伟说，做了40多年设计，这是他耗时最短却兴奋很久的一次："构思3个小时，画了40多分钟手稿，设计完我很满意，就它了！"</p>
+
+                <div class="mascot-grid">
+                    <div class="mascot-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <h4>🤍 喜洋洋（白色）</h4>
+                        <p>代表海豚安静时的状态</p>
+                    </div>
+                    <div class="mascot-card" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        <h4>💗 乐融融（粉色）</h4>
+                        <p>取自海豚运动充血时的生理特征</p>
+                    </div>
+                </div>
+
+                <img src="https://mmbiz.qpic.cn/mmbiz_jpg/azXQmS1HA7nQ9bbsBDtARkobWfb16adRfQRcs72pBgG4M5xCkFuZSFQOH4KnIhQnG6Qacg0n3GMhUfqnLtGjJQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="中华白海豚">
+
+                <h3>🐬 设计原型：中华白海豚</h3>
+                <p>"喜洋洋"和"乐融融"的设计原型是<strong>国家一级保护野生动物——中华白海豚</strong>。它是粤港澳地区海洋文化的象征。</p>
+
+                <p>作为全球濒危物种，中华白海豚年年回归珠江三角洲繁衍，这样的"习俗"被人们赋予不忘故乡、深爱家园的寓意，象征粤港澳人民心手相连。</p>
+
+                <h3>💧 三色水柱的寓意</h3>
+                <p>头顶的三色水柱融合了：</p>
+                <ul style="margin-left: 20px;">
+                    <li>🌺 <strong>广东木棉红</strong></li>
+                    <li>💜 <strong>香港紫荆紫</strong></li>
+                    <li>💚 <strong>澳门莲花绿</strong></li>
+                </ul>
+                <p style="margin-top: 10px;">象征着粤港澳共同举办十五运会。</p>
+
+                <p>"可爱到发芽！"一位网友对三色水柱的评论得到了很多人的赞同。</p>
+
+                <h3>🍗 亲切的外号："大湾鸡"</h3>
+                <p>"大湾鸡"这个外号源于热爱美食的网友们亲切的调侃。十五运会会徽和吉祥物设计团队负责人刘平云表示："有网友说我们的吉祥物是'白切鸡'和'豉油鸡'，这个想法太有创意了！不论是小鸡还是小海豚，只要大家喜欢就好。"</p>
+
+                <p>刘平云也是"冰墩墩"设计团队的总执行人。面对网友对"大湾鸡"铺天盖地的喜爱，他很高兴："我们相信，'可爱'是这个世界的共通语言。"</p>
+            </div>
+
+            <!-- 开幕式部分 -->
+            <div class="title" id="opening">开幕式精彩瞬间</div>
+            
+            <div class="content-box">
+                <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/oq1PymRl9D51Ikal2I90PMh0xDBr7W87k1JGzLCCkAevRG3QuZ14icWPZibcBYEQTkkpd01BBRwvPL3BDuNCtRGg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="开幕式">
+
+                <h3>🎆 盛大开幕</h3>
+                <p>2025年11月9日晚，由广东、香港、澳门联合承办的第十五届全国运动会，在广州奥林匹克体育中心体育场盛大开幕。粤港澳体育代表团同步入场，智能机器人敲响青铜器，岭南文化"赛博"登场，精彩纷呈！</p>
+
+                <div class="highlight-list">
+                    <div class="highlight-item">
+                        <h4>🇨🇳 01. 燃！粤港澳三地同步升国旗</h4>
+                        <p>最美不过中国红。开幕式现场，随着《歌唱祖国》的歌声，五星红旗入场。粤港澳三地同步升国旗，彰显"一国两制"在新时代下的新发展及粤港澳儿女的家国认同。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>❤️ 02. 多个细节彰显"三地同心"</h4>
+                        <p>开幕式巧妙融入广州"小蛮腰"、香港维多利亚港、澳门大三巴等标志性元素，展现粤港澳大湾区互联互通的蓬勃生机。主舞台是一个同心圆的造型，体现了粤港澳三地共筑同心圆的核心理念。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🤖 03. 智能机器人敲青铜器句鑃</h4>
+                        <p>智能机器人敲响了盛行于春秋战国时期的乐器青铜句鑃（gōu diào），一曲《彩云追月》，带来一场相隔两千多年的梦幻对话。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🎭 04. 岭南文化"赛博"登场</h4>
+                        <p>南拳南棍、八斩刀、咏春拳等著名岭南武术流传甚广，武者在舞台中央表演，一招一式，干净利落，行云流水。舞台上空，一条巨大的鳌鱼在舞动。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🦁 05. 醒狮舞动 锣鼓喧天</h4>
+                        <p>舞台上锣鼓喧天，醒狮舞动，腾挪纵跃如凌风。夜空中几头醒狮滚动绣球，与场地内的醒狮表演遥相呼应。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🐉 06. 龙舟竞渡场景震撼</h4>
+                        <p>号子声响，鼓声雷动，舞台化身龙舟竞渡场，龙舟通过AR技术"划入"，展现岭南传统文化的魅力。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🔥 07. 粤港澳三地火炬手共同点燃主火炬</h4>
+                        <p>十五运会的火种来自南海1522米深处的可燃冰，在广州、深圳、香港和澳门三地四城传递后，粤港澳三地火炬手共同点燃十五运会主火炬。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🎵 08. 主题曲《天海一心》唱响</h4>
+                        <p>周深、单依纯合唱主题歌《天海一心》，以歌声凝聚三地情谊。歌词以"一滴水""一汪水""一弯月"的意象递进，勾勒出"天涯若比邻"的相聚之美。</p>
+                    </div>
+                </div>
+
+                <img src="https://mmbiz.qpic.cn/mmbiz_jpg/azXQmS1HA7nZk9fzz4OfV0lgxfg8POib6471p8491rV3fkX8IcWy8yCibwwSv2iaNOibeeAhAktIia6vZArRCXiciaEmw/640?wx_fmt=jpeg&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp" alt="升国旗">
+
+                <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/oq1PymRl9D51Ikal2I90PMh0xDBr7W87h45cPnlzkV8nVbL0PwZWyyRrHz6sSfPImwpzdsa75ibmVvwhWSZaFDA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="同心圆舞台">
+
+                <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/oq1PymRl9D51Ikal2I90PMh0xDBr7W87WPQslu2ZxWHIdTHTl8c6oYnmrepOKuwvicLTHGK4PvFo9wyuja6yq3w/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="代表团入场">
+
+                <h3>🎶 经典歌曲串烧</h3>
+                <p>全运会唱响《海阔天空》，是谁的DNA动了！"手牵着手不分你我昂首向前走，让世界知道我们都是中国人"——刘德华登场唱《中国人》，引发全场大合唱。</p>
+
+                <p style="font-weight: bold; color: #2c62f7; margin-top: 30px;">十五运会盛大启幕，相信还有更多精彩瞬间留在了你的记忆中。接下来，将有更多精彩，一起为运动健儿加油！</p>
+            </div>
+
+            <!-- 运动项目介绍 -->
+            <div class="title" id="sports">运动项目介绍</div>
+            
+            <div class="content-box">
+                <h3>🏅 34个大项 419个小项</h3>
+                <p>本届全运会竞体比赛项目共设<strong>34个大项419个小项</strong>，涵盖了游泳、田径、篮球、足球、排球、乒乓球、羽毛球、体操、举重、射击等多个传统项目，以及攀岩、滑板等新兴项目。</p>
+
+                <div class="highlight-list">
+                    <div class="highlight-item">
+                        <h4>🏊 游泳</h4>
+                        <p>包括自由泳、蝶泳、仰泳、蛙泳、混合泳等多个项目，是全运会最受关注的项目之一。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🏃 田径</h4>
+                        <p>短跑、长跑、跨栏、跳高、跳远、铅球、标枪等，展现人类速度与力量的极限。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🏀 三大球</h4>
+                        <p>篮球、足球、排球是最具团队精神和观赏性的集体项目。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🏓 乒乓球</h4>
+                        <p>中国的国球，包括男女单打、双打、混双和团体赛。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🏸 羽毛球</h4>
+                        <p>速度与技巧的完美结合，包括单打、双打、混双项目。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🤸 体操</h4>
+                        <p>包括竞技体操、艺术体操、蹦床等，展现力与美的艺术。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🏋️ 举重</h4>
+                        <p>力量的较量，分为不同重量级别进行比赛。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🎯 射击</h4>
+                        <p>考验选手的专注力和稳定性，包括步枪、手枪、飞碟等项目。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🧗 攀岩</h4>
+                        <p>新兴项目，包括速度攀岩、难度攀岩、攀石等。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🛹 滑板</h4>
+                        <p>年轻人喜爱的极限运动，首次进入全运会。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🚴 自行车</h4>
+                        <p>包括公路自行车、场地自行车、山地自行车等。</p>
+                    </div>
+
+                    <div class="highlight-item">
+                        <h4>🤼 武术</h4>
+                        <p>中国传统体育项目，包括套路和散打。</p>
+                    </div>
+                </div>
+
+                <p style="margin-top: 30px;"><strong>历史意义：</strong>这是全运会历史上第一次由粤港澳三地联合承办，也是第一次走进香港、澳门，具有重要的历史意义。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="lib-foot">
+        <div class="part">
+            <p>第十五届全国运动会 · 广东·香港·澳门</p>
+            <p>2025年11月9日-21日</p>
+        </div>
+    </div>
+</body>
+</html>

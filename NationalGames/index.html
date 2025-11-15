@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第十五届全国运动会专题网站</title>
+    <style>
+        @font-face {
+            font-family: XHW-pzh;
+            src: url(/global/public/text/XHW-pzh.woff2) format('woff2'), 
+                 url(/global/public/text/XHW-pzh.woff) format('woff'), 
+                 url(/global/public/text/XHW-pzh.ttf) format('truetype')
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'PingFang SC', XHW-pzh, 'Lantinghei SC', 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', '微软雅黑', STHeitiSC-Light, simsun, '宋体', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none;
+            outline: 0;
+            color: #000;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #2c62f7 !important;
+        }
+
+        .clearfix:after {
+            content: '';
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            font-size: 0;
+            display: block;
+            clear: both;
+        }
+
+        .part {
+            width: 1200px;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+        /* 顶部横幅 */
+        .ej-banner {
+            position: relative;
+            z-index: 5;
+            width: 100%;
+            height: 600px;
+            background-image: url("images/2025qyh_pcBanner_v1.jpg");
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .xhwrk {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            left: 50%;
+            top: 48px;
+            margin-left: 569px;
+        }
+
+        .xhwrk img {
+            width: 120px;
+            height: 120px;
+        }
+
+        /* 导航栏 */
+        .ej-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            height: 58px;
+            background: #2c62f7;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .ej-nav .part {
+            box-sizing: border-box;
+            font-size: 0;
+        }
+
+        .ej-nav .part .nav-main {
+            font-size: 0;
+            margin: 0 auto;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .ej-nav .part a {
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+            line-height: 58px;
+            padding: 0 20px;
+            margin: 0 5px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .ej-nav .part a.active,
+        .ej-nav .part a:hover {
+            color: #fff !important;
+            background: rgba(255,255,255,0.2);
+            font-weight: 700;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        /* 快速入口卡片 */
+        .quick-access {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .access-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .access-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .access-card .card-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .access-card .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .access-card .card-content {
+            padding: 25px;
+        }
+
+        .access-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #2c62f7;
+        }
+
+        .access-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 新闻模块 */
+        .title {
+            position: relative;
+            margin: 40px auto 30px;
+            font-size: 30px;
+            line-height: 1.5;
+            font-weight: 700;
+            color: #2c62f7;
+            border-bottom: 2px solid #2c62f7;
+            padding-bottom: 10px;
+        }
+
+        .title:before {
+            content: "";
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 8px;
+            margin-right: 10px;
+            width: 6px;
+            height: 30px;
+            background: #2c62f7;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .news-card .news-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #2c62f7 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .news-card .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-card .news-content {
+            padding: 20px;
+        }
+
+        .news-card .news-title {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            line-height: 1.5;
+            height: 51px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .news-card .news-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .news-card .news-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #999;
+        }
+
+        .news-tag {
+            background: #2c62f7;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        /* 底部 */
+        .lib-foot {
+            margin-top: 50px !important;
+            background: #2c62f7 !important;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* 响应式设计 */
+        @media screen and (max-width: 1200px) {
+            .part {
+                width: 100%;
+                padding: 0 3%;
+            }
+
+            .quick-access,
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ej-banner {
+                height: auto;
+            }
+
+            .xhwrk {
+                right: 20px;
+                top: 20px;
+                left: auto;
+                margin-left: 0;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .quick-access,
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ej-nav .part a {
+                font-size: 16px;
+                padding: 0 12px;
+                margin: 0 2px;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部横幅 -->
+    <div class="ej-banner">
+        <div class="xhwrk">
+            <a href="https://www.news.cn/" target="_blank">
+            </a>
+        </div>
+    </div>
+
+    <!-- 导航栏 -->
+    <div class="ej-nav">
+        <div class="part">
+            <div class="nav-main">
+                <a href="index.html" class="active">首页</a>
+                <a href="schedule.html">赛程安排</a>
+                <a href="news.html">赛场速讯</a>
+                <a href="live.html">直播大厅</a>
+                <a href="interview.html">人物访谈</a>
+                <a href="encyclopedia.html">全运百科</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="main-content">
+        <div class="part">
+            <!-- 快速入口 -->
+            <div class="quick-access">
+                <a href="schedule.html" class="access-card">
+                    <div class="card-image">
+                        <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/oq1PymRl9D41aibibbCNybxRK8Y1qDQPxz9rsgP18zvauia3bLSw0elV6qs76rXQ6AuhM0v04X691oFBo8QzVFqvQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="赛程安排">
+                    </div>
+                    <div class="card-content">
+                        <h3>📅 赛程安排</h3>
+                        <p>第十五届全运会将于2025年11月9日至21日举行，共设34个大项419个小项，查看完整赛程</p>
+                    </div>
+                </a>
+
+                <a href="news.html" class="access-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <span style="font-size: 100px;">📰</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>⚡ 赛场速讯</h3>
+                        <p>实时更新全运会赛场动态，第一时间了解比赛结果和精彩瞬间</p>
+                    </div>
+                </a>
+
+                <a href="live.html" class="access-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <span style="font-size: 100px;">📺</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>🎬 直播大厅</h3>
+                        <p>观看精彩赛事直播，不错过每一个激动人心的时刻</p>
+                    </div>
+                </a>
+
+                <a href="interview.html" class="access-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <span style="font-size: 100px;">🎤</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>👥 人物访谈</h3>
+                        <p>深度专访运动健儿，了解冠军背后的故事</p>
+                    </div>
+                </a>
+
+                <a href="encyclopedia.html" class="access-card">
+                    <div class="card-image">
+                        <img src="https://mmbiz.qpic.cn/mmbiz_jpg/azXQmS1HA7nQ9bbsBDtARkobWfb16adR3ibhTM8PuqrJGiapUoicWLwCDSGomt3n6FrRBypXhkTokhymv3xKJ0vCg/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp" alt="吉祥物">
+                    </div>
+                    <div class="card-content">
+                        <h3>📖 全运百科</h3>
+                        <p>了解吉祥物"喜洋洋""乐融融"、开幕式精彩瞬间和运动项目介绍</p>
+                    </div>
+                </a>
+
+                <a href="encyclopedia.html#opening" class="access-card">
+                    <div class="card-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <span style="font-size: 100px;">🎆</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>✨ 开幕式回顾</h3>
+                        <p>重温开幕式精彩瞬间，粤港澳三地共筑同心圆</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 最新资讯 -->
+            <div class="title">最新资讯</div>
+            <div class="news-grid">
+                <div class="news-card" onclick="window.location.href='news.html'">
+                    <div class="news-image">
+                        <span style="font-size: 80px; color: white;">🏊</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title">第18金！"五朝元老"汪顺达成四连冠</div>
+                        <div class="news-desc">汪顺在全运会游泳比赛中夺得个人第18枚金牌，实现四连冠伟业</div>
+                        <div class="news-meta">
+                            <span class="news-tag">游泳</span>
+                            <span>2025-11-15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" onclick="window.location.href='news.html'">
+                    <div class="news-image">
+                        <span style="font-size: 80px; color: white;">🏓</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title">乒乓球："诗与远方"混双摘金 马龙领衔江苏夺冠</div>
+                        <div class="news-desc">"诗与远方"组合在混双比赛中夺冠，马龙带领江苏队获得团体金牌</div>
+                        <div class="news-meta">
+                            <span class="news-tag">乒乓球</span>
+                            <span>2025-11-15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" onclick="window.location.href='news.html'">
+                    <div class="news-image">
+                        <span style="font-size: 80px; color: white;">🤸</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title">副校长肖若腾卫冕</div>
+                        <div class="news-desc">体操名将肖若腾成功卫冕，展现出色竞技状态</div>
+                        <div class="news-meta">
+                            <span class="news-tag">体操</span>
+                            <span>2025-11-15</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" onclick="window.location.href='encyclopedia.html'">
+                    <div class="news-image">
+                        <img src="https://mmbiz.qpic.cn/mmbiz_jpg/azXQmS1HA7nQ9bbsBDtARkobWfb16adR3ibhTM8PuqrJGiapUoicWLwCDSGomt3n6FrRBypXhkTokhymv3xKJ0vCg/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp" alt="吉祥物">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title">彻底火了！"喜洋洋""乐融融"成"大湾鸡"</div>
+                        <div class="news-desc">全运会吉祥物凭借可爱形象走红网络，网友亲切称其为"大湾鸡"</div>
+                        <div class="news-meta">
+                            <span class="news-tag">吉祥物</span>
+                            <span>2025-11-10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" onclick="window.location.href='encyclopedia.html#opening'">
+                    <div class="news-image">
+                        <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/oq1PymRl9D51Ikal2I90PMh0xDBr7W87k1JGzLCCkAevRG3QuZ14icWPZibcBYEQTkkpd01BBRwvPL3BDuNCtRGg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="开幕式">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title">第十五届全运会开幕式亮点集锦</div>
+                        <div class="news-desc">粤港澳三地同步升国旗，智能机器人敲青铜器，岭南文化"赛博"登场</div>
+                        <div class="news-meta">
+                            <span class="news-tag">开幕式</span>
+                            <span>2025-11-09</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-card" onclick="window.location.href='news.html'">
+                    <div class="news-image">
+                        <span style="font-size: 80px; color: white;">🏀</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-title">广东队和四川队会师女篮成年组决赛</div>
+                        <div class="news-desc">女篮半决赛激战，广东队和四川队脱颖而出晋级决赛</div>
+                        <div class="news-meta">
+                            <span class="news-tag">篮球</span>
+                            <span>2025-11-14</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="lib-foot">
+        <div class="part">
+            <p>第十五届全国运动会 · 广东·香港·澳门</p>
+            <p>2025年11月9日-21日</p>
+        </div>
+    </div>
+</body>
+</html>
