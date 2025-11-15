@@ -40,20 +40,34 @@
             margin: 0 auto;
         }
 
+        /* ************************************** */
+        /* 横幅样式修改：从渐变色改为纯图片背景，无文字内容 */
+        /* ************************************** */
         .ej-banner {
+            position: relative;
             width: 100%;
             height: 400px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            
+            /* 新增：设置背景图片 */
+            background-image: url('images/项目总览.jpg'); /* **请替换成你的图片路径** */
+            background-size: cover; /* 覆盖整个区域 */
+            background-position: center center; /* 图片居中 */
+            background-repeat: no-repeat;
+            
+            /* 移除了原有的渐变色和文字居中用的 flex 布局 */
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            /* display: flex; */
+            /* align-items: center; */
+            /* justify-content: center; */
+            /* color: white; */
         }
 
-        .banner-content h1 {
+        /* 相关的 banner-content 样式也一并移除，因为内容被移除 */
+        /* .banner-content h1 {
             font-size: 48px;
             margin-bottom: 20px;
-        }
+        } */
+        /* ************************************** */
 
         .ej-nav {
             position: sticky;
@@ -224,15 +238,9 @@
     </style>
 </head>
 <body>
-    <!-- 横幅 -->
     <div class="ej-banner">
-        <div class="banner-content">
-            <h1>📖 全运百科</h1>
-            <p>了解全运会 · 感受体育魅力</p>
         </div>
-    </div>
 
-    <!-- 导航栏 -->
     <div class="ej-nav">
         <div class="part">
             <div class="nav-main">
@@ -246,14 +254,12 @@
         </div>
     </div>
 
-    <!-- 主要内容 -->
     <div class="ej-list">
         <div class="part">
-            <!-- 吉祥物部分 -->
             <div class="title" id="mascot">吉祥物："喜洋洋"和"乐融融"</div>
             
             <div class="content-box">
-                <img src="https://mmbiz.qpic.cn/mmbiz_jpg/azXQmS1HA7nQ9bbsBDtARkobWfb16adR3ibhTM8PuqrJGiapUoicWLwCDSGomt3n6FrRBypXhkTokhymv3xKJ0vCg/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp" alt="吉祥物">
+                <img src="images/吉祥物.jpg" alt="吉祥物">
                 
                 <h3>🎉 彻底火了！你认识它俩不？</h3>
                 <p>五万多人背着呆萌的双肩包鱼贯而出……这不是什么大型的放学现场，而是十五运会开幕式后的散场。</p>
@@ -265,7 +271,7 @@
                 <h3>📦 广州喜乐包（"显眼包"）</h3>
                 <p>这款背包名叫<strong>"广州喜乐包"</strong>，也被网友称为<strong>"显眼包"</strong>。包的正面是"喜洋洋"和"乐融融"两只十五运会和残特奥会的吉祥物憨态可掬的大头照。</p>
 
-                <p>"广州喜乐包"主设计师曾振伟说，做了40多年设计，这是他耗时最短却兴奋很久的一次："构思3个小时，画了40多分钟手稿，设计完我很满意，就它了！"</p>
+                <p>“广州喜乐包”主设计师曾振伟说，做了40多年设计，这是他耗时最短却兴奋很久的一次：“构思3个小时，画了40多分钟手稿，设计完我很满意，就它了！”</p>
 
                 <div class="mascot-grid">
                     <div class="mascot-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
@@ -278,7 +284,7 @@
                     </div>
                 </div>
 
-                <img src="https://mmbiz.qpic.cn/mmbiz_jpg/azXQmS1HA7nQ9bbsBDtARkobWfb16adRfQRcs72pBgG4M5xCkFuZSFQOH4KnIhQnG6Qacg0n3GMhUfqnLtGjJQ/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="中华白海豚">
+                <img src="images/白海豚.jpg" alt="中华白海豚">
 
                 <h3>🐬 设计原型：中华白海豚</h3>
                 <p>"喜洋洋"和"乐融融"的设计原型是<strong>国家一级保护野生动物——中华白海豚</strong>。它是粤港澳地区海洋文化的象征。</p>
@@ -302,11 +308,10 @@
                 <p>刘平云也是"冰墩墩"设计团队的总执行人。面对网友对"大湾鸡"铺天盖地的喜爱，他很高兴："我们相信，'可爱'是这个世界的共通语言。"</p>
             </div>
 
-            <!-- 开幕式部分 -->
             <div class="title" id="opening">开幕式精彩瞬间</div>
             
             <div class="content-box">
-                <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/oq1PymRl9D51Ikal2I90PMh0xDBr7W87k1JGzLCCkAevRG3QuZ14icWPZibcBYEQTkkpd01BBRwvPL3BDuNCtRGg/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="开幕式">
+                <img src="images/open.jpg" alt="开幕式">
 
                 <h3>🎆 盛大开幕</h3>
                 <p>2025年11月9日晚，由广东、香港、澳门联合承办的第十五届全国运动会，在广州奥林匹克体育中心体育场盛大开幕。粤港澳体育代表团同步入场，智能机器人敲响青铜器，岭南文化"赛博"登场，精彩纷呈！</p>
@@ -344,7 +349,7 @@
 
                     <div class="highlight-item">
                         <h4>🔥 07. 粤港澳三地火炬手共同点燃主火炬</h4>
-                        <p>十五运会的火种来自南海1522米深处的可燃冰，在广州、深圳、香港和澳门三地四城传递后，粤港澳三地火炬手共同点燃十五运会主火炬。</p>
+                        <p>十五运会的火种来自南海1522米深处的**可燃冰**，在广州、深圳、香港和澳门三地四城传递后，粤港澳三地火炬手共同点燃十五运会主火炬。</p>
                     </div>
 
                     <div class="highlight-item">
@@ -353,11 +358,11 @@
                     </div>
                 </div>
 
-                <img src="https://mmbiz.qpic.cn/mmbiz_jpg/azXQmS1HA7nZk9fzz4OfV0lgxfg8POib6471p8491rV3fkX8IcWy8yCibwwSv2iaNOibeeAhAktIia6vZArRCXiciaEmw/640?wx_fmt=jpeg&from=appmsg&wxfrom=5&wx_lazy=1&tp=webp" alt="升国旗">
+                <img src="images/开幕式.gif" alt="">
 
-                <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/oq1PymRl9D51Ikal2I90PMh0xDBr7W87h45cPnlzkV8nVbL0PwZWyyRrHz6sSfPImwpzdsa75ibmVvwhWSZaFDA/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="同心圆舞台">
+                <img src="images/open1.jpg" alt="">
 
-                <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/oq1PymRl9D51Ikal2I90PMh0xDBr7W87WPQslu2ZxWHIdTHTl8c6oYnmrepOKuwvicLTHGK4PvFo9wyuja6yq3w/640?wx_fmt=jpeg&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" alt="代表团入场">
+                <img src="images/open2.jpg" alt="">
 
                 <h3>🎶 经典歌曲串烧</h3>
                 <p>全运会唱响《海阔天空》，是谁的DNA动了！"手牵着手不分你我昂首向前走，让世界知道我们都是中国人"——刘德华登场唱《中国人》，引发全场大合唱。</p>
@@ -365,7 +370,6 @@
                 <p style="font-weight: bold; color: #2c62f7; margin-top: 30px;">十五运会盛大启幕，相信还有更多精彩瞬间留在了你的记忆中。接下来，将有更多精彩，一起为运动健儿加油！</p>
             </div>
 
-            <!-- 运动项目介绍 -->
             <div class="title" id="sports">运动项目介绍</div>
             
             <div class="content-box">
@@ -434,12 +438,13 @@
                     </div>
                 </div>
 
+                <img src="images/项目总览.jpg" alt="">
+
                 <p style="margin-top: 30px;"><strong>历史意义：</strong>这是全运会历史上第一次由粤港澳三地联合承办，也是第一次走进香港、澳门，具有重要的历史意义。</p>
             </div>
         </div>
     </div>
 
-    <!-- 底部 -->
     <div class="lib-foot">
         <div class="part">
             <p>第十五届全国运动会 · 广东·香港·澳门</p>

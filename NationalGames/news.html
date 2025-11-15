@@ -41,19 +41,22 @@
         }
 
         .ej-banner {
+            position: relative;
             width: 100%;
             height: 400px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            
+            /* 新增：设置背景图片 */
+            background-image: url('images/news.jpg'); /* **请替换成你的图片路径** */
+            background-size: cover; /* 覆盖整个区域 */
+            background-position: center center; /* 图片居中 */
+            background-repeat: no-repeat;
+            
+            /* 移除了原有的渐变色和文字居中用的 flex 布局 */
         }
 
-        .banner-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+        /* 相关的 banner-content 样式已移除 */
+        /* ************************************** */
+
 
         .ej-nav {
             position: sticky;
@@ -201,15 +204,9 @@
     </style>
 </head>
 <body>
-    <!-- 横幅 -->
     <div class="ej-banner">
-        <div class="banner-content">
-            <h1>⚡ 赛场速讯</h1>
-            <p>实时更新 · 第一时间掌握赛场动态</p>
         </div>
-    </div>
 
-    <!-- 导航栏 -->
     <div class="ej-nav">
         <div class="part">
             <div class="nav-main">
@@ -223,7 +220,6 @@
         </div>
     </div>
 
-    <!-- 主要内容 -->
     <div class="ej-list">
         <div class="part">
             <div class="title">最新动态</div>
@@ -355,7 +351,6 @@
         </div>
     </div>
 
-    <!-- 底部 -->
     <div class="lib-foot">
         <div class="part">
             <p>第十五届全国运动会 · 广东·香港·澳门</p>
