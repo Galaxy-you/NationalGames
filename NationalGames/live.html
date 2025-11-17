@@ -44,29 +44,12 @@
             position: relative;
             width: 100%;
             height: 400px;
-            
-            /* 新增：设置背景图片 */
-            background-image: url('images/live.jpg'); /* **请替换成你的图片路径** */
-            background-size: cover; /* 覆盖整个区域 */
-            background-position: center center; /* 图片居中 */
+            background-image: url('images/live.jpg');
+            background-size: cover;
+            background-position: center center;
             background-repeat: no-repeat;
-            
-            /* 移除了原有的渐变色和文字居中用的 flex 布局 */
-            /* background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); */
-            /* display: flex; */
-            /* align-items: center; */
-            /* justify-content: center; */
-            /* color: white; */
         }
         
-        /* 相关的 banner-content 样式也一并移除，因为内容被移除 */
-        /* .banner-content h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        } */
-        /* ************************************** */
-
-
         .ej-nav {
             position: sticky;
             top: 0;
@@ -148,11 +131,12 @@
         .live-card .live-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 60px;
             position: relative;
         }
 
@@ -229,8 +213,7 @@
     </style>
 </head>
 <body>
-    <div class="ej-banner">
-        </div>
+    <div class="ej-banner"></div>
 
     <div class="ej-nav">
         <div class="part">
@@ -250,50 +233,51 @@
             <div class="title">正在直播</div>
             
             <div class="live-grid">
-                <div class="live-card">
-                    <div class="live-image">
-                        <div class="live-badge">🔴 直播中</div>
-                        <span style="color: white;">🏊</span>
+                <a href="https://tv.cctv.com/live/cctv5/index.shtml?stime=1762944900&etime=1762947000" class="live-card-link" target="_blank">
+                    <div class="live-card">
+                        <div class="live-image" style="background-image: url('images/swimming.jpg');">
+                            <div class="live-badge">🔴 直播中</div>
+                        </div>
+                        <div class="live-content">
+                            <div class="live-title">游泳 - 男子200米自由泳决赛</div>
+                            <div class="live-info">📍 广州奥体中心游泳馆</div>
+                            <div class="live-time">⏰ 19:30 - 21:00</div>
+                        </div>
                     </div>
-                    <div class="live-content">
-                        <div class="live-title">游泳 - 男子200米自由泳决赛</div>
-                        <div class="live-info">📍 广州奥体中心游泳馆</div>
-                        <div class="live-time">⏰ 19:30 - 21:00</div>
-                    </div>
-                </div>
+                </a>
 
-                <div class="live-card">
-                    <div class="live-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                        <div class="live-badge">🔴 直播中</div>
-                        <span style="color: white;">🏀</span>
+                <a href="https://tv.cctv.com/live/cctv5plus/index.shtml?stime=1763206200&etime=1763213400" class="live-card-link" target="_blank">
+                    <div class="live-card">
+                        <div class="live-image" style="background-image: url('images/basketball.jpg');">
+                            <div class="live-badge">🔴 直播中</div>
+                        </div>
+                        <div class="live-content">
+                            <div class="live-title">篮球 - 女篮决赛</div>
+                            <div class="live-info">📍 深圳宝安体育馆</div>
+                            <div class="live-time">⏰ 20:00 - 22:00</div>
+                        </div>
                     </div>
-                    <div class="live-content">
-                        <div class="live-title">篮球 - 女子成年组决赛</div>
-                        <div class="live-info">📍 深圳宝安体育馆</div>
-                        <div class="live-time">⏰ 20:00 - 22:00</div>
-                    </div>
-                </div>
+                </a>
 
-                <div class="live-card">
-                    <div class="live-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                        <div class="live-badge">🔴 直播中</div>
-                        <span style="color: white;">🏐</span>
+                <a href="https://tv.cctv.com/live/cctv5/index.shtml?stime=1763185920&etime=1763190000" class="live-card-link" target="_blank">
+                    <div class="live-card">
+                        <div class="live-image" style="background-image: url('images/volleyball.jpg');">
+                            <div class="live-badge">🔴 直播中</div>
+                        </div>
+                        <div class="live-content">
+                            <div class="live-title">排球 - 女排小组赛</div>
+                            <div class="live-info">📍 广州体育馆</div>
+                            <div class="live-time">⏰ 19:00 - 21:30</div>
+                        </div>
                     </div>
-                    <div class="live-content">
-                        <div class="live-title">排球 - 男子成年组半决赛</div>
-                        <div class="live-info">📍 广州体育馆</div>
-                        <div class="live-time">⏰ 19:00 - 21:30</div>
-                    </div>
-                </div>
+                </a>
             </div>
 
             <div class="title">即将直播</div>
             
             <div class="live-grid">
                 <div class="live-card">
-                    <div class="live-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                        <span style="color: white;">🏓</span>
-                    </div>
+                    <div class="live-image" style="background-image: url('images/tabletennis.jpg');"></div>
                     <div class="live-content">
                         <div class="live-title">乒乓球 - 女子单打决赛</div>
                         <div class="live-info">📍 广东省体育馆</div>
@@ -302,9 +286,7 @@
                 </div>
 
                 <div class="live-card">
-                    <div class="live-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                        <span style="color: white;">🏸</span>
-                    </div>
+                    <div class="live-image" style="background-image: url('images/badminton.jpg');"></div>
                     <div class="live-content">
                         <div class="live-title">羽毛球 - 混合双打决赛</div>
                         <div class="live-info">📍 佛山岭南明珠体育馆</div>
@@ -313,9 +295,7 @@
                 </div>
 
                 <div class="live-card">
-                    <div class="live-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
-                        <span style="color: white;">🤸</span>
-                    </div>
+                    <div class="live-image" style="background-image: url('images/gymnastics.jpg');"></div>
                     <div class="live-content">
                         <div class="live-title">体操 - 女子个人全能决赛</div>
                         <div class="live-info">📍 中山体育馆</div>
@@ -324,9 +304,7 @@
                 </div>
 
                 <div class="live-card">
-                    <div class="live-image" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
-                        <span style="color: white;">🏋️</span>
-                    </div>
+                    <div class="live-image" style="background-image: url('images/weightlifting.jpg');"></div>
                     <div class="live-content">
                         <div class="live-title">举重 - 男子89公斤级决赛</div>
                         <div class="live-info">📍 东莞体育中心</div>
@@ -335,9 +313,7 @@
                 </div>
 
                 <div class="live-card">
-                    <div class="live-image" style="background: linear-gradient(135deg, #fad0c4 0%, #ffd1ff 100%);">
-                        <span style="color: white;">🏃</span>
-                    </div>
+                    <div class="live-image" style="background-image: url('images/athletics.jpg');"></div>
                     <div class="live-content">
                         <div class="live-title">田径 - 男子100米决赛</div>
                         <div class="live-info">📍 广州奥体中心体育场</div>
@@ -346,9 +322,7 @@
                 </div>
 
                 <div class="live-card">
-                    <div class="live-image" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
-                        <span style="color: white;">🚴</span>
-                    </div>
+                    <div class="live-image" style="background-image: url('images/cycling.jpg');"></div>
                     <div class="live-content">
                         <div class="live-title">场地自行车 - 团体竞速赛</div>
                         <div class="live-info">📍 香港单车馆</div>
